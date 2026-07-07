@@ -1,0 +1,91 @@
+body {
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header-bg {
+  background-color: #000000;
+}
+
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box; /*valores de padding não somam*/
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.header-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.header-menu a {
+  position: relative;
+  display: inline-block; /* Permite que um elemento inline aceite width, height e tenha um
+   comportamento de caixa mais previsível com padding e margin,
+   sem deixar de ficar na mesma linha dos outros elementos. */
+  padding: 16px 0;
+  color: #fff;
+  font-size: 18px;
+}
+
+.header-menu a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  display: block;
+  background-color: #fff;
+  margin-top: 4px;
+  transition: 0.3s;
+  position: absolute;
+}
+
+.header-menu a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  .header-menu {
+    gap: 20px;
+  }
+
+  .header-menu a {
+    background: #111111;
+    padding: 12px 16px;
+    border-radius: 4px;
+  }
+
+  .header-menu a:hover {
+    background-color: #2e2e2e;
+  }
+
+  .header a::after {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-menu {
+    gap: 12px;
+  }
+
+  .header-menu a {
+    padding: 8px 12px;
+  }
+}
